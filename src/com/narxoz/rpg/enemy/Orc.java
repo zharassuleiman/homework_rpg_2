@@ -3,14 +3,14 @@ package com.narxoz.rpg.enemy;
 import com.narxoz.rpg.combat.Ability;
 import com.narxoz.rpg.loot.LootTable;
 
-public class Goblin implements Enemy {
+public class Orc implements Enemy {
     private String name;
     private int hp;
     private Ability ability;
     private LootTable loot;
     private String ai;
 
-    public Goblin(String name, int hp, Ability ability, LootTable loot, String ai) {
+    public Orc(String name, int hp, Ability ability, LootTable loot, String ai) {
         this.name = name;
         this.hp = hp;
         this.ability = ability;
@@ -19,7 +19,7 @@ public class Goblin implements Enemy {
     }
     @Override
     public Enemy clone() {
-        return new Goblin(name, hp, ability.clone(), loot.clone(), ai);
+        return new Orc(name, hp, ability.clone(), loot.clone(), ai);
     }
     @Override
     public void multiplyStats(double f) {
@@ -27,6 +27,6 @@ public class Goblin implements Enemy {
     }
     @Override
     public void displayInfo() {
-        System.out.println("Goblin: " + name + " | HP: " + hp + " | AI: " + ai);
+        System.out.println("Orc: " + name + " | HP: " + hp + " | Ability: " + ability.getName());
     }
 }
